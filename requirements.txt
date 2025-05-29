@@ -1,0 +1,4 @@
+gradio
+transformers
+sentence-transformers
+faiss-cpu
