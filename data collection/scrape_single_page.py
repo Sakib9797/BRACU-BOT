@@ -37,7 +37,7 @@ def sanitize_filename(name):
 
 
 if __name__ == "__main__":
-    url = "https://www.bracu.ac.bd/students-transport-service"  # Change this URL manually for other pages
+    url = "....."  # Change this URL manually for other pages
     page_num = 2  # Change this to increment for saving multiple pages
     
     html = scrape_with_playwright(url)
