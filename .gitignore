@@ -1,0 +1,47 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Virtual env ---
+.venv/
+venv/
+env/
+.env
+
+# --- HuggingFace cache (model weights, ~3 GB) ---
+# Models are downloaded to %USERPROFILE%/.cache/huggingface by default,
+# but if anyone sets HF_HOME locally, ignore it too.
+.huggingface/
+huggingface/
+models/
+
+# --- Scraped data + intermediate artifacts ---
+# The `data/` folder is committed in this project (the small corpus is
+# intentionally checked in), but the larger backups and logs are not.
+data.backup/
+scrape_run.log
+*.log
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Scraper intermediates ---
+urls.json
+urls_filtered.json
+
+# --- Temp / stray ---
+tempCodeRunnerFile.py

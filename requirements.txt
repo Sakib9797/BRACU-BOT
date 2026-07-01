@@ -1,4 +1,6 @@
-gradio
-transformers
-sentence-transformers
-faiss-cpu
+gradio>=4.0
+transformers>=4.40,<5.0
+sentence-transformers>=2.6
+faiss-cpu>=1.7
+beautifulsoup4>=4.12
+playwright>=1.40
