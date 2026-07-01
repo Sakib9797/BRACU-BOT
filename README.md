@@ -40,29 +40,6 @@ scrape_all.py                 # Convenience wrapper
 requirements.txt              # Pinned dependencies
 ```
 
-## Refreshing the corpus
-
-The chatbot's knowledge comes from `.txt` files in `data/`. To rebuild it:
-
-### Option A — ScraperAPI (recommended, handles Cloudflare for you)
-
-```powershell
-$env:SCRAPERAPI_KEY = "your-key-here"
-.\.venv\Scripts\python.exe "data collection\scrape_via_api.py"
-```
-
-Free tier: 1000 requests/month, plenty for the 67 filtered pages.
-
-### Option B — Local Playwright
-
-```powershell
-.\.venv\Scripts\python.exe "data collection\recusive_scape.py"
-```
-
-May be blocked by Cloudflare depending on your IP reputation.
-
-After scraping, restart `app.py` — the FAISS index is rebuilt from `data/`
-on startup.
 
 ## How it works
 
@@ -74,13 +51,15 @@ on startup.
 3. **Generation**: the chunks are stuffed into a small prompt and passed
    to FLAN-T5, which produces a short grounded answer.
 
+## After running the server
+<img width="1919" height="933" alt="Screenshot 2026-07-02 002721" src="https://github.com/user-attachments/assets/e7fa4ff3-aab9-46a1-8ba6-f8a26aadf4ef" />
+
+
 ## Notes & limitations
 
 - The QA model is small (~250M params), so answers are short and
   sometimes imprecise on long questions. Swap `google/flan-t5-base` for
   `flan-t5-large` in `app.py` for noticeably better answers (4× slower).
-- Cloudflare protections on bracu.ac.bd occasionally block the local
-  scraper — use ScraperAPI if this happens.
 - The current corpus is a small filtered subset. Expanding it (more
   pages, PDFs, faculty listings) is the highest-impact next step.
 
