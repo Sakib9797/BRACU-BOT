@@ -36,8 +36,8 @@ def sanitize_filename(name):
 
 if __name__ == "__main__":
     urls = [
-        "https://www.bracu.ac.bd",
-        "https://www.bracu.ac.bd/admissions/apply-now",
+        ".....",
+        ".....",
     ]
 
     os.makedirs("scraped_pages", exist_ok=True)
